@@ -2,10 +2,10 @@
 // instance variables, instance methods : camel case
 // static variables : upper case
 class BankAccount{
-    accountNumber:number;
-    accountBalance:number;
-    customerId:number;
-    accountType:string;
+    accountNumber=0;
+    accountBalance=0
+    customerId=0;
+    accountType="savings";
 
     deposit(amount:number){
         this.accountBalance=this.accountBalance+amount;
@@ -27,3 +27,14 @@ let account2 = new BankAccount();
 console.log(account1.accountBalance);
 console.log(account2.accountNumber);
 
+console.log(account1);
+console.log(account2);
+
+account1.accountType="current";
+console.log(account1)
+console.log(account2);
+
+account2.deposit(4500)
+account1.deposit(34000);
+console.log(account1)
+console.log(account2);

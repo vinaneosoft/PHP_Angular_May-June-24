@@ -3,6 +3,10 @@
 // static variables : upper case
 var BankAccount = /** @class */ (function () {
     function BankAccount() {
+        this.accountNumber = 0;
+        this.accountBalance = 0;
+        this.customerId = 0;
+        this.accountType = "savings";
     }
     BankAccount.prototype.deposit = function (amount) {
         this.accountBalance = this.accountBalance + amount;
@@ -23,3 +27,12 @@ account1 = new BankAccount(); // default constr
 var account2 = new BankAccount();
 console.log(account1.accountBalance);
 console.log(account2.accountNumber);
+console.log(account1);
+console.log(account2);
+account1.accountType = "current";
+console.log(account1);
+console.log(account2);
+account2.deposit(4500);
+account1.deposit(34000);
+console.log(account1);
+console.log(account2);
