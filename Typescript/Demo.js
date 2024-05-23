@@ -13,3 +13,4 @@ console.log(typeof salary);
 salary=true
 console.log(typeof salary);
 /*  salary : number*/
+
