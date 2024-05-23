@@ -1,0 +1,4 @@
+Create Student class with instance variables and methods
+Create 2 Student objects
+Create constant reference variables so that they must not be reused to refer other objects
+Create 3rd student object with 2 references
