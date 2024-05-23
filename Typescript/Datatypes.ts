@@ -25,21 +25,30 @@ console.log(typeof companyName);
 
  companyName="Neosoft";
  console.log(typeof companyName);
- 
 // return type annotations to a function
  function add(...nums:number[]){
-    return nums.reduce((acc,num)=>acc+num);
+    return nums.reduce((acc,num)=>acc+num); // js built in function
   // return "";
    //return true;
  }
-
  function add2(...nums:number[]):number{
     return nums.reduce((acc,num)=>acc+num);
     //return ""
  }
-
  function add3(...nums:number[]):void{
     //return nums.reduce((acc,num)=>acc+num);
     //return ""
     console.log(nums.reduce((acc,num)=>acc+num))
  }
+
+ let s="Neosoft";
+ //s is string
+ let s2;
+ // s2 is any
+ s2="Neosoft";
+// type assertion 
+let s3=<string>s2
+console.log( s3.toLowerCase());
+console.log((<string>s2).toUpperCase());
+
+
