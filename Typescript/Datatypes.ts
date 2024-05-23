@@ -26,3 +26,20 @@ console.log(typeof companyName);
  companyName="Neosoft";
  console.log(typeof companyName);
  
+// return type annotations to a function
+ function add(...nums:number[]){
+    return nums.reduce((acc,num)=>acc+num);
+  // return "";
+   //return true;
+ }
+
+ function add2(...nums:number[]):number{
+    return nums.reduce((acc,num)=>acc+num);
+    //return ""
+ }
+
+ function add3(...nums:number[]):void{
+    //return nums.reduce((acc,num)=>acc+num);
+    //return ""
+    console.log(nums.reduce((acc,num)=>acc+num))
+ }
