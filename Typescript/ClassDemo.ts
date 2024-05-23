@@ -19,3 +19,11 @@ class BankAccount{
         return this.accountBalance;
     }
 }
+
+let account1:BankAccount; // custom type
+account1=new BankAccount();// default constr
+// same statment: declare and create account
+let account2 = new BankAccount();
+console.log(account1.accountBalance);
+console.log(account2.accountNumber);
+
