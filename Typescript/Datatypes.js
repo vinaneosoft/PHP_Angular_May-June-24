@@ -8,8 +8,14 @@
  */
 var empId; // string, boolean // custom data types
 empId = 6789;
-empId = "xyz";
-empId = true;
+//empId="xyz";
+//empId=true;
 var empSalary;
 empSalary = 45000;
 empSalary = "forty thousand";
+var count = 10; //number
+//count=true;
+var companyName;
+console.log(typeof companyName);
+companyName = "Neosoft";
+console.log(typeof companyName);

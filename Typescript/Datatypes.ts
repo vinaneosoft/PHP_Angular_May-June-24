@@ -7,12 +7,22 @@
  * js : dynamically typed lang / loose typed lang
  */
 
-let empId:number; // string, boolean // custom data types
+let empId:number; // string, boolean // custom data types  type annotations
 
 empId=6789;
-empId="xyz";
-empId=true;
+//empId="xyz";
+//empId=true;
 
 let empSalary:any;
 empSalary=45000;
 empSalary="forty thousand"
+
+let count = 10; //number
+//count=true;
+
+let companyName;
+console.log(typeof companyName);
+
+ companyName="Neosoft";
+ console.log(typeof companyName);
+ 
