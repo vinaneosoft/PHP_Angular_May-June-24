@@ -30,8 +30,17 @@ var NeoTrainer = /** @class */ (function (_super) {
     function NeoTrainer() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.trainingTechnologies = [];
+        _this.extraWorkingHrs = 0;
+        _this.payPerHr = 0;
         return _this;
     }
+    NeoTrainer.prototype.extraPay = function () {
+        return this.extraWorkingHrs * this.payPerHr;
+    };
+    // add any own method
+    NeoTrainer.prototype.getGrossSalary = function () {
+        return this.extraPay() + this.basicSalary + 0.1 * this.basicSalary + 0.08 * this.basicSalary + 0.15 * this.basicSalary;
+    };
     return NeoTrainer;
 }(NeoEmployee)); // subclass body ended
 var employee1 = new NeoEmployee();
@@ -45,5 +54,8 @@ trainer1.employeeId = 222;
 trainer1.employyName = "Poonam";
 trainer1.basicSalary = 67000;
 trainer1.trainingTechnologies = ["Java", "We Basics", "Angular", "React"];
+trainer1.extraWorkingHrs = 15;
+trainer1.payPerHr = 1000;
 console.log(trainer1);
-console.log("Trainer Gross Salary:" + trainer1.getGrossSalary());
+console.log("Trainer extra Pay:" + trainer1.extraPay());
+console.log("Trainer Gross Salary:" + trainer1.getGrossSalary()); // calling inheried overriden method
