@@ -23,3 +23,5 @@ console.log(company.companyName);
 
 let teacher1=new Trainer();
 teacher1.tid
+
+
