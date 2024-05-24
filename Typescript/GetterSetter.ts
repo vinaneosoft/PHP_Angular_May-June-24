@@ -1,10 +1,10 @@
 
 class BankAccount{
     constructor(
-        public accountNumber=0,
-        public accountBalance=0,
-        public customerId=0, 
-        public accountType="savings",
+        private accountNumber=0,
+        private accountBalance=0,
+        private customerId=0, 
+        private accountType="savings",
     ){
         // constructor body
         console.log("p - constrcutor");
@@ -20,7 +20,15 @@ class BankAccount{
             throw new Error("Insufficient Balance");
         return this.accountBalance;
     }
-}
+    get accBalance(){
+        return this.accountBalance;
+    }
+    set accBalance(accountBalance:number){
+        this.accountBalance=accountBalance;
+    }
+    /* create remaining getters setters */
+
+}// class body ends
 
 let account1:BankAccount; // custom type
 account1=new BankAccount(567889,56000,111,"savings");// default constr
@@ -36,3 +44,8 @@ console.log(account2);
 console.log(account4);
 console.log(account5);
 console.log(account6);
+//Property 'accountBalance' is private and only accessible within class 'BankAccount'
+account1.accBalance=67000;
+//This expression is not callable because it is a 'get' accessor.
+console.log(account1.accBalance);
+// access other getters setters here
