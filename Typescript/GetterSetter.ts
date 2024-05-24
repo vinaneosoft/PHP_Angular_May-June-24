@@ -1,5 +1,5 @@
-
-class BankAccount{
+// getterSetter
+export class BankAccount{
     constructor(
         private accountNumber=0,
         private accountBalance=0,

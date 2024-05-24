@@ -1,5 +1,5 @@
-
-class BankAccount{
+// Shortcut
+export class BankAccount{
     constructor(
         public accountNumber=0,
         public accountBalance=0,
