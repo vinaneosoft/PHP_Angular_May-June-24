@@ -1,19 +1,13 @@
 
 class BankAccount{
-    accountNumber:number;
-    accountBalance:number;
-    customerId:number;
-    accountType:string
-   /*  constructor(){
-        console.log("Default constrcutor");
-    } */
-    /*Multiple constructor implementations are not allowed. */
-    constructor(accNum=0,accountBalance=0,custId=0, accountType="savings"){
+    constructor(
+        public accountNumber=0,
+        public accountBalance=0,
+        public customerId=0, 
+        public accountType="savings"
+    ){
+        // constructor body
         console.log("p - constrcutor");
-        this.accountBalance=accountBalance;
-        this.accountNumber=accNum;
-        this.accountType=accountType;
-        this.customerId=custId;
     }
     deposit(amount:number){
         this.accountBalance=this.accountBalance+amount;
