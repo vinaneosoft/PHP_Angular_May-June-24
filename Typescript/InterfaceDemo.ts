@@ -84,7 +84,6 @@ interface B{
 interface C extends A, B{
     implement():void
 }
-
 class XYZ implements C{
     implement(): void {
         throw new Error("Method not implemented.");
@@ -97,3 +96,22 @@ class XYZ implements C{
     }
     
 }
+
+
+/*
+one class can not extend multiple classes but
+one class can implement multiple interface
+one interface can extend multiple interfaces
+ */
+class P{
+
+}
+
+interface Q{
+
+}
+
+class R   extends P implements Q {
+
+}
+

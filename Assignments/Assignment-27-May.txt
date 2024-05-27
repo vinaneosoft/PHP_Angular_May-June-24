@@ -1,2 +1,5 @@
 Create Singletone class using private constructor and static method. Static method must return object of that class
 (singletone class means whose only one object is available and only that is returned when needed) 
+
+Implement other API methods in Array. Also prove that pop is typesafe method
+

@@ -26,3 +26,4 @@ console.log(employee.getGrossSalary());
 employee = new NeoTrainer();
 employee.basicSalary = 56000;
 console.log(employee.getGrossSalary());
+
