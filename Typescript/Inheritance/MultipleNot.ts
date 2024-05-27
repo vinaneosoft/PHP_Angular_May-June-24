@@ -8,11 +8,11 @@ class Mother{
         return "Engineer"
     }
 }
-class Child extends Father, Mother{
+/* class Child extends Father, Mother{
     achiveDream(){
         this.dream(); // ambiguity
     }
-}
+} */
 // multiple inheritance via class in not supported
 
 interface Father{
