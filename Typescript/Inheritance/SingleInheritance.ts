@@ -2,7 +2,9 @@ export class NeoEmployee{
     employeeId=0;
     employyName="";
     basicSalary=0;
-
+    constructor(){
+        console.log("in super class constructor");
+    }
 // ta: 10%, da=8%, hra=15%
    getGrossSalary():number{
     return this.basicSalary+0.1*this.basicSalary+0.08*this.basicSalary+0.15*this.basicSalary
@@ -12,14 +14,21 @@ export class NeoEmployee{
 export class NeoTrainer extends NeoEmployee{
     trainingTechnologies:string[]=[]
     extraWorkingHrs=0;
-    payPerHr=0;
+    payPerHr:number;
+    /*Constructors for derived classes must contain a 'super' call. */
+    constructor(){
+        console.log("in sub class constructor");
+        super(); // super must comes before this in constructor call
+        this.payPerHr=0;
+        // u can initialize rest properties here
+    }
+
     extraPay(){
         return this.extraWorkingHrs*this.payPerHr;
     }
     // add any own method
-
     getGrossSalary():number{
-        return super.getGrossSalary()+this.extraPay();
+        return this.extraPay()+super.getGrossSalary();
     }
 
 }// subclass body ended
