@@ -1,4 +1,4 @@
-class NeoEmployee{
+export class NeoEmployee{
     employeeId=0;
     employyName="";
     basicSalary=0;
@@ -9,7 +9,7 @@ class NeoEmployee{
    }
 }
 
-class NeoTrainer extends NeoEmployee{
+export class NeoTrainer extends NeoEmployee{
     trainingTechnologies:string[]=[]
     extraWorkingHrs=0;
     payPerHr=0;
@@ -19,7 +19,7 @@ class NeoTrainer extends NeoEmployee{
     // add any own method
 
     getGrossSalary():number{
-        return this.extraPay()+this.basicSalary+0.1*this.basicSalary+0.08*this.basicSalary+0.15*this.basicSalary
+        return super.getGrossSalary()+this.extraPay();
     }
 
 }// subclass body ended
