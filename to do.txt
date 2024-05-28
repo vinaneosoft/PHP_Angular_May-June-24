@@ -1,0 +1,7 @@
+Angular CLI: 18.0.1
+Node: 20.11.1
+Package Manager: npm 9.6.7
+OS: win32 x64
+
+Angular: undefined
+...
