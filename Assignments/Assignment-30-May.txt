@@ -1,2 +1,10 @@
 Create Text field to take Employee Name but do not bind it with ngModel. Instead access its value using
-template reference variable. Display Employee Name in uppercase on Template side
+template reference variable. Display Employee Name in uppercase on Template side.
+
+take student percentage as input from user.
+Display grade according to following conditions:
+1. if percentage>=70 : Distinction
+2. if percentage <70 && >= 60 : first class
+3. if percentage <60 && >-40 : pass
+4. if percentage <40 : fail
+5. default case : wrong input
