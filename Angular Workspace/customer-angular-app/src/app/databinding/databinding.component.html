@@ -1,0 +1,10 @@
+<h2>Two-way Data binding using ngModel directive</h2>
+<p>data from model => view , if data change in model view gets updated data
+    and if data change in view side model gets updated data
+    auto synchronization between model and view
+</p>
+<div>
+    <!-- import FormsModule in app.module.ts file-->
+    <b>{{companyName}}</b><br>
+    <input type="text" placeholder="Enter company name" [(ngModel)]="companyName" (keyup)="prove()"> 
+</div>

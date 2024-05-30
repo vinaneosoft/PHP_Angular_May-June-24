@@ -1,9 +1,16 @@
-<h1 class="myHeader">This is my first Angular project</h1> <!-- template-->
-<h2>{{title}}</h2> <!-- data binding-->
-<p class="fonts">
-    Vina Patil
-   
-</p>
-<ol>
-    <li>Wrong placed</li>
-</ol>
+<app-header></app-header>
+<app-databinding></app-databinding>
+<div>
+    <h1 class="myHeader">This is my first Angular project</h1> <!-- template-->
+    <h2 class="text-success">{{title}}</h2> <!-- 1 way data binding : string interpolation-->
+    <p class="fonts">
+        Vina Patil
+    
+    </p>
+    <ol>
+        <li>Strict template</li>
+    </ol>
+    <input type="{{inputType}}" placeholder="enter password">
+    <!-- attribute binding via string interpolation : not recommended -->
+</div>
+<app-footer></app-footer>

@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'customer-angular-app';
+  title = 'customer-angular-app'; // data available
   projectName="";
+  inputType="password";
 }
