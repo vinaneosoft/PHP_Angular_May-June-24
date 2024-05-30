@@ -13,4 +13,10 @@
     <input id="showp" type="checkbox" [(ngModel)]="checkNode" (change)="changeType()">
     <label for="showp">:show password</label>
 </div>
+<h4>Template Reference Variables</h4>
+<p #mypara>
+    <b>Hello Welcome to Neosoft</b>
+    <i> <b>Hello Welcome to Neosoft</b> </i>
+</p>
+<button class="btn btn-success" (click)="getPara(mypara)">Get Para Contents</button>
 <!-- {{}}, (), [()], []-->

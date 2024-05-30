@@ -22,4 +22,11 @@ export class DatabindingComponent {
     //console.log(this.checkNode);
     this.checkNode?this.inputType="text":this.inputType="password";
   }
+  getPara(node:HTMLElement){
+    console.log(typeof node);
+    console.log(node instanceof HTMLParagraphElement);
+    console.log(node);
+    console.log(node.innerText);
+    
+  }
 }
