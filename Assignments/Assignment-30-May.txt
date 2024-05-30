@@ -1,0 +1,2 @@
+Create Text field to take Employee Name but do not bind it with ngModel. Instead access its value using
+template reference variable. Display Employee Name in uppercase on Template side
