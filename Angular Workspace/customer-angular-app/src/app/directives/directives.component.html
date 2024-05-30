@@ -33,3 +33,41 @@
     </p>
     </ng-template>
 </div>
+<div>
+    <input type="number" [(ngModel)]="age" placeholder="enter number">
+    <section [ngSwitch]="age"> 
+        <p *ngSwitchCase="1">
+            <b>Hi</b>
+        </p>
+        <p *ngSwitchCase="2">
+            <b>Hello</b>
+        </p>
+        <p *ngSwitchCase="3">
+            <b>BYE</b>
+        </p>
+        <p *ngSwitchCase="2">
+            <b>Welcome</b>
+        </p>
+        <p *ngSwitchDefault>
+            <b>default case matched</b>
+        </p>
+    </section>
+    <ol [ngSwitch]="age">
+        <li *ngSwitchCase="1">HI</li>
+        <li *ngSwitchCase="2">Hello</li>
+        <li *ngSwitchCase="3">Welcome</li>
+        <li *ngSwitchDefault>Default case</li>
+    </ol>
+    <ol [ngSwitch]="true">
+        <li *ngSwitchCase="age>=18">Welcome</li>
+        <li *ngSwitchCase="age<18">Sorry</li>
+    </ol>
+    <select [(ngModel)]="companyLoc" title="city">
+        <option value="Rabale">RABALE</option>
+        <option value="Dadar">DADAR</option>
+    </select>
+    <ol [ngSwitch]="companyLoc">
+        <li *ngSwitchCase="'Rabale'">its in navi mumbai</li>
+        <li *ngSwitchCase="'Dadar'">its in mumbai</li>
+    </ol>
+</div>

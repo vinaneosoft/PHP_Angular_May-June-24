@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 export class DirectivesComponent {
   show=true;
   age=0;
+  companyLoc="Rabale";
+  constructor(){
+    
+  }
 }
