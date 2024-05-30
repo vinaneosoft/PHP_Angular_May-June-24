@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class DatabindingComponent {
   companyName="Neosoft";
+  inputType="password";
+  checkNode=false;
   prove(){
     console.log(this.companyName); // if view chaging the data model gets updated
     
@@ -15,5 +17,9 @@ export class DatabindingComponent {
     setTimeout(()=>{
       this.companyName="Squad Infotech" // if model changes the data view gets updated
     },4000);
+  }
+  changeType(){
+    //console.log(this.checkNode);
+    this.checkNode?this.inputType="text":this.inputType="password";
   }
 }
