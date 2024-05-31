@@ -77,4 +77,19 @@
         </tbody>
     </table>
     <!-- display names vertically in multiple rows-->
+    <table class="table table-bordered">
+        <tbody>
+            <tr *ngFor="let name of employeeNames; let i=index; let ev=even; let odd=odd;">
+                <td>{{name}}</td><td>{{i}}</td><td>{{ev}}</td><td>{{odd}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- display names only from odd indexes-->
+    <table class="table table-bordered">
+        <tbody>
+            <tr *ngFor="let name of employeeNames; let odd=odd;">
+                <td *ngIf="odd">{{name}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

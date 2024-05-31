@@ -10,7 +10,7 @@ export class DirectivesComponent {
   age=0;
   companyLoc="Rabale";
   companyLocations=["Rabale","Dadar","Parel"];
-  employeeNames=["Meera","Pooja","Pawan","Kirti","Kishan"];
+  employeeNames=["Meera","Pooja","Pawan","Kirti","Kishan", "Amar","Sameera","Varun"];
   constructor(){
     
   }
