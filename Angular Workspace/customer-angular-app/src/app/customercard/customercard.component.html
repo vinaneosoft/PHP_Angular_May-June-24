@@ -1,17 +1,19 @@
 
 <div class="card" [ngStyle]="{width: '18rem'}">
-    <img src="..." class="card-img-top" alt="...">
+    <h5>#{{mycustomer.id}}</h5>
+    <img [src]="mycustomer.customerImage" title="image" class="card-img-top" [alt]="mycustomer.customerName">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <h5 class="card-title">{{mycustomer.customerName}}</h5>
+      <i>This customer registered on {{mycustomer.registerDate}}</i>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">{{mycustomer.customerEmail}}</li>
+      <li class="list-group-item">{{mycustomer.customerContact}}</li>
+      <li class="list-group-item">{{mycustomer.username}}</li>
+      <li class="list-group-item">{{mycustomer.password}}</li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a href="#" class="card-link">EDIT</a>
+      <a href="#" class="card-link">DELETE</a>
     </div>
   </div>

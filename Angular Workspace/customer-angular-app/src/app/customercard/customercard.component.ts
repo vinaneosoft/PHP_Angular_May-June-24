@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Customer } from '../myclasses/customer';
 
 @Component({
   selector: 'app-customercard',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './customercard.component.css'
 })
 export class CustomercardComponent {
-
+    @Input() // data incoming from parent
+    mycustomer=new Customer(); // it will take a data from parent
 }

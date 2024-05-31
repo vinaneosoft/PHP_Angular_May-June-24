@@ -5,10 +5,10 @@ export class Customer {
         public customerName="",
         public customerContact=0,
         public customerEmail="",
-        public registerDate=new Date(),
-        public customerImage="Resources/sampleimage.webp",
         public username="",
-        public password=""
+        public password="",
+        public registerDate=new Date(),
+        public customerImage="Resources/sampleimage.webp"
     )
     {}
 

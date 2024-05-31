@@ -1,3 +1,5 @@
-<section >
-    <app-customercard></app-customercard>
+<section class="d-flex">
+    <div *ngFor="let customer of customers">
+        <app-customercard [mycustomer]="customer"></app-customercard>
+    </div>
 </section>
