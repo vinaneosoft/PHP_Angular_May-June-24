@@ -71,9 +71,9 @@
         <li *ngSwitchCase="'Dadar'">its in Mumbai</li>
         <li *ngSwitchCase="'Parel'">its in Mumbai</li>
     </ol>
-    <table class="table table-bordered">
+    <table border="2" [ngStyle]="tableStyle">
         <tbody>
-            <tr><th>NAMES : </th><td *ngFor="let name of employeeNames">{{name}}</td></tr>
+            <tr><th>NAMES :</th><td [ngStyle]="{border:'2px solid red',padding:'10px'}" *ngFor="let name of employeeNames">{{name}}</td></tr>
         </tbody>
     </table>
     <!-- display names vertically in multiple rows-->

@@ -11,6 +11,11 @@ export class DirectivesComponent {
   companyLoc="Rabale";
   companyLocations=["Rabale","Dadar","Parel"];
   employeeNames=["Meera","Pooja","Pawan","Kirti","Kishan", "Amar","Sameera","Varun"];
+  tableStyle={
+    color:"green",
+    backgroundColor:"yellow", // javascript keys in camel case
+    fontSize:"20px"
+  }
   constructor(){
     
   }
