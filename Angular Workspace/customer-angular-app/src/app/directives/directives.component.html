@@ -62,12 +62,19 @@
         <li *ngSwitchCase="age>=18">Welcome</li>
         <li *ngSwitchCase="age<18">Sorry</li>
     </ol>
+    <label>Select company location : </label>
     <select [(ngModel)]="companyLoc" title="city">
-        <option value="Rabale">RABALE</option>
-        <option value="Dadar">DADAR</option>
+      <option *ngFor="let loc of companyLocations" [value]="loc">{{loc | uppercase}}</option>
     </select>
     <ol [ngSwitch]="companyLoc">
-        <li *ngSwitchCase="'Rabale'">its in navi mumbai</li>
-        <li *ngSwitchCase="'Dadar'">its in mumbai</li>
+        <li *ngSwitchCase="'Rabale'">its in Navi mumbai</li>
+        <li *ngSwitchCase="'Dadar'">its in Mumbai</li>
+        <li *ngSwitchCase="'Parel'">its in Mumbai</li>
     </ol>
+    <table class="table table-bordered">
+        <tbody>
+            <tr><th>NAMES : </th><td *ngFor="let name of employeeNames">{{name}}</td></tr>
+        </tbody>
+    </table>
+    <!-- display names vertically in multiple rows-->
 </div>
