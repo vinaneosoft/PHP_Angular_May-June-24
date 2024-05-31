@@ -16,6 +16,12 @@ export class DirectivesComponent {
     backgroundColor:"yellow", // javascript keys in camel case
     fontSize:"20px"
   }
+  styleClasses=['table','table-bordered','table-warning']
+  classObject={
+    'table':true,
+    'table-bordered':true,
+    'table-warning':false
+  }
   constructor(){
     
   }

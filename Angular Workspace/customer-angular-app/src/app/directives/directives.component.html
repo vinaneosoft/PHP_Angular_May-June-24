@@ -71,12 +71,14 @@
         <li *ngSwitchCase="'Dadar'">its in Mumbai</li>
         <li *ngSwitchCase="'Parel'">its in Mumbai</li>
     </ol>
+    <button type="button" (click)="tableStyle.color='blue'">CHANGE STYLE</button>
     <table border="2" [ngStyle]="tableStyle">
         <tbody>
             <tr><th>NAMES :</th><td [ngStyle]="{border:'2px solid red',padding:'10px'}" *ngFor="let name of employeeNames">{{name}}</td></tr>
         </tbody>
     </table>
     <!-- display names vertically in multiple rows-->
+   
     <table class="table table-bordered">
         <tbody>
             <tr *ngFor="let name of employeeNames; let i=index; let ev=even; let odd=odd;">
@@ -85,7 +87,21 @@
         </tbody>
     </table>
     <!-- display names only from odd indexes-->
-    <table class="table table-bordered">
+    <table [ngClass]="styleClasses">
+        <tbody>
+            <tr *ngFor="let name of employeeNames; let odd=odd;">
+                <td *ngIf="odd">{{name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table [ngClass]="['table','table-hover']">
+        <tbody>
+            <tr *ngFor="let name of employeeNames; let odd=odd;">
+                <td *ngIf="odd">{{name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table [ngClass]="classObject">
         <tbody>
             <tr *ngFor="let name of employeeNames; let odd=odd;">
                 <td *ngIf="odd">{{name}}</td>
