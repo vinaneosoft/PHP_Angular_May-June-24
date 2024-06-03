@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { CustomercardComponent } from './customercard/customercard.component';
 import { CustomersComponent } from './customers/customers.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CustomersComponent } from './customers/customers.component';
     DatabindingComponent,
     DirectivesComponent,
     CustomercardComponent,
-    CustomersComponent
+    CustomersComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <h5>#{{mycustomer.id}}</h5>
     <img [src]="mycustomer.customerImage" title="image" class="card-img-top" [alt]="mycustomer.customerName">
     <div class="card-body">
-      <h5 class="card-title">{{mycustomer.customerName}}</h5>
+      <h5 class="card-title">{{mycustomer.customerName | slice : 0:9}}</h5> <!-- uppercase, lowercase, tittlecase, slice (u can pass -ve indexes)-->
       <i>This customer registered on {{mycustomer.registerDate}}</i>
     </div>
     <ul class="list-group list-group-flush">
