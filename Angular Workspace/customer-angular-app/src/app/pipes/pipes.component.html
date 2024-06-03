@@ -2,4 +2,32 @@
 <table class="table table-hover">
     <tr><td *ngFor="let price of productPrices">{{price}}</td></tr>
     <tr><td *ngFor="let price of productPrices">{{price | number }}</td></tr> <!-- thousand seperator, rounded to 3 (0 to 3 allowed)-->
+    <tr><td *ngFor="let price of productPrices">{{price | number : '.1' }}</td></tr>  <!-- 1 to 3-->
+    <tr><td *ngFor="let price of productPrices">{{price | number : '.2-2' }}</td></tr>
+    <tr><td *ngFor="let price of productPrices">{{price | number : '5.2-2' }}</td></tr>
+</table>
+<table class="table table-hover">
+    <tr><td *ngFor="let price of productPrices">{{price}}</td></tr>
+    <tr><td *ngFor="let price of productPrices">{{price | currency }}</td></tr> <!--$ currency, thousand seperator, rounded to exactly 2 (2 allowed)-->
+    <tr><td *ngFor="let price of productPrices">{{price | currency : 'EUR'}}</td></tr> 
+    <tr><td *ngFor="let price of productPrices">{{price | currency : 'INR' : 'code'}}</td></tr>  <!-- symbol-->
+    <tr><td *ngFor="let price of productPrices">{{price | currency : 'INR' : 'code' : '.3-3'}}</td></tr>
+</table>
+<table class="table table-hover">
+    <tr><td>{{sysDate}}</td></tr>
+    <tr><td>{{sysDate | date}}</td></tr> <!-- medium date-->
+    <tr><td>Short Date: </td><td>{{sysDate | date : 'shortDate'}}</td></tr> 
+    <tr><td>Medium Date: </td> <td>{{sysDate | date : 'mediumDate'}}</td></tr> 
+    <tr><td>Long Date: </td> <td>{{sysDate | date : 'longDate'}}</td></tr> 
+    <tr><td>Full Date: </td> <td>{{sysDate | date : 'fullDate'}}</td></tr> 
+    <tr><td>Short Time: </td><td>{{sysDate | date : 'shortTime'}}</td></tr> 
+    <tr><td>Medium Time: </td> <td>{{sysDate | date : 'mediumTime'}}</td></tr> 
+    <tr><td>Long Time: </td> <td>{{sysDate | date : 'longTime'}}</td></tr> 
+    <tr><td>Full Time: </td> <td>{{sysDate | date : 'fullTime'}}</td></tr> 
+    <tr><td>Short: </td><td>{{sysDate | date : 'short'}}</td></tr> 
+    <tr><td>Medium : </td> <td>{{sysDate | date : 'medium'}}</td></tr> 
+    <tr><td>Long : </td> <td>{{sysDate | date : 'long'}}</td></tr> 
+    <tr><td>Full : </td> <td>{{sysDate | date : 'full'}}</td></tr> 
+    <tr><td>Custom : </td> <td>{{sysDate | date : "yy-MMMMM-dd, EEEEE, w 'rd week'"}}</td></tr>
+    <tr><td>Custom : </td> <td>{{ myDate | date : "YY-MMMMM-dd, EEEEE, w 'st week'"}}</td></tr>  
 </table>
