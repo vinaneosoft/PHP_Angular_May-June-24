@@ -1,5 +1,5 @@
 <section class="d-flex">
-    <div *ngFor="let customer of customers">
+    <div *ngFor="let customer of customers | orderby :property">
         <app-customercard [mycustomer]="customer"></app-customercard>
     </div>
 </section>

@@ -12,6 +12,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { CustomercardComponent } from './customercard/customercard.component';
 import { CustomersComponent } from './customers/customers.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { OrderbyPipe } from './custompipes/orderby.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PipesComponent } from './pipes/pipes.component';
     DirectivesComponent,
     CustomercardComponent,
     CustomersComponent,
-    PipesComponent
+    PipesComponent,
+    OrderbyPipe
   ],
   imports: [
     BrowserModule,

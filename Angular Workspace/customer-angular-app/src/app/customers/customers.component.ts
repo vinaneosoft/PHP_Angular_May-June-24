@@ -7,7 +7,7 @@ import { Customer } from '../myclasses/customer';
   styleUrl: './customers.component.css'
 })
 export class CustomersComponent {
-
+  property="id";
   customers=[
     new Customer("123","Poonam pawar", 8989898989,"poonam@gmail.com","poo","poo",new Date('Dec 24, 2004')),
     new Customer("113","Kishan pawar", 9999999999,"kishan@gmail.com","poo","poo"),
