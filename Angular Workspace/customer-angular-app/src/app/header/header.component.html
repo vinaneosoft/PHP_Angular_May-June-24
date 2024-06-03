@@ -1,5 +1,6 @@
 
 <header class="myHeader">
-    <h2>CUSTOMER CRUD</h2>
-    <app-navbar></app-navbar>
+    <h2>{{brand}}</h2>
+    <h3>CUSTOMER CRUD</h3>
+    <app-navbar (emitter)="brand=$event"></app-navbar> <!-- 4. bind event and assign value from $event to parent variable-->
 </header>

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  // value in brand will come from child side
+  brand:string=""
 
 }
