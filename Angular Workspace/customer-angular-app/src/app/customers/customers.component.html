@@ -1,4 +1,4 @@
-<section class="d-flex">
+<section class="d-flex flex-wrap">
     <div *ngFor="let customer of customers | orderby :property">
         <app-customercard [mycustomer]="customer"></app-customercard>
     </div>
