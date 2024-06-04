@@ -1,0 +1,39 @@
+<div class="container w-50 bg-success">
+    <h3>Customer Register Form</h3>
+    <form [formGroup]="registerForm" (submit)="register()">
+        <div class="mb-3">
+            <label for="id" class="form-label">ID:</label>
+            <input type="text" class="form-control" id="id" formControlName="id">
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">NAME:</label>
+            <input type="text" class="form-control" id="name" formControlName="customerName">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">CONTACT:</label>
+            <input type="number" class="form-control" id="contact" formControlName="customerContact">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">EMAIL ID:</label>
+            <input type="email" class="form-control" id="email" formControlName="customerEmail">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">SET USERNAME:</label>
+            <input type="text" class="form-control" id="username" formControlName="username">
+        </div>
+        <div class="mb-3">
+            <label for="pass" class="form-label">SET PASSWORD:</label>
+            <input type="text" class="form-control" id="pass" formControlName="password">
+        </div>
+        <div class="mb-3">
+            <label for="cpass" class="form-label">CONFIRM PASSWORD:</label>
+            <input type="text" class="form-control" id="cpass">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Select Register Date:</label>
+            <input type="datetime-local" class="form-control" id="date" formControlName="registerDate">
+        </div>
+        <button type="submit" class="btn btn-primary">REGISTER</button>
+        <button type="reset" class="btn btn-warning">RESET</button>
+    </form>
+</div>

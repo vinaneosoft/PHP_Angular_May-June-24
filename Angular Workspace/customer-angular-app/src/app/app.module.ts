@@ -7,13 +7,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DatabindingComponent } from './databinding/databinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { CustomercardComponent } from './customercard/customercard.component';
 import { CustomersComponent } from './customers/customers.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { MypipePipe } from './custompipes/mypipe.pipe';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +28,12 @@ import { MypipePipe } from './custompipes/mypipe.pipe';
     CustomersComponent,
     PipesComponent,
     OrderbyPipe,
-    MypipePipe
+    MypipePipe,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
