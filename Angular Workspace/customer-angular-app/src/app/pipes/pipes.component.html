@@ -31,3 +31,6 @@
     <tr><td>Custom : </td> <td>{{sysDate | date : "yy-MMMMM-dd, EEEEE, w 'rd week'"}}</td></tr>
     <tr><td>Custom : </td> <td>{{ myDate | date : "YY-MMMMM-dd, EEEEE, w 'st week'"}}</td></tr>  
 </table>
+<table class="table table-hover">
+    <tr><td *ngFor="let price of productPrices | orderby">{{price}}</td></tr>
+</table>

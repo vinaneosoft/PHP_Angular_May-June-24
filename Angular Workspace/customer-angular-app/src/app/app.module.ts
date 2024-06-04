@@ -13,6 +13,7 @@ import { CustomercardComponent } from './customercard/customercard.component';
 import { CustomersComponent } from './customers/customers.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
+import { MypipePipe } from './custompipes/mypipe.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { OrderbyPipe } from './custompipes/orderby.pipe';
     CustomercardComponent,
     CustomersComponent,
     PipesComponent,
-    OrderbyPipe
+    OrderbyPipe,
+    MypipePipe
   ],
   imports: [
     BrowserModule,

@@ -7,10 +7,8 @@ export class OrderbyPipe implements PipeTransform {
 
   transform(originalarray: any[], ...args: string[]): any {
    // console.log(originalarray);
-    const property=args[0]; //id
+    const property=args[0];
   //  console.log(property);
-    // string[], 
-    //number[], object[]
     return originalarray.sort((ob1:any,ob2:any)=>{
         if(ob1[property]>ob2[property]) //ob1.id>ob2.id
           return 1;

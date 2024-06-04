@@ -1,0 +1,2 @@
+if orderby pipe is getting normal string array without passing property, pipe must return sorted string array
+if orderby pipe is getting normal number array without property, pipe must return sorted number array

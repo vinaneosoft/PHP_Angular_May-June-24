@@ -1,3 +1,15 @@
+<div>
+    <label for="sortChoice">Sort By: </label>
+    <select id="sortChoice" [(ngModel)]="property">
+        <option value="id">ID</option>
+        <option value="customerName">NAME</option>
+        <option value="registerDate">REGISTER DATE</option>
+        <option value="customerContact">CONTACT</option>
+        <option value="customerEmail">EMAIL</option>
+        <option value="username">USERNAME</option>
+    </select>
+
+</div>
 <section class="d-flex flex-wrap">
     <div *ngFor="let customer of customers | orderby :property">
         <app-customercard [mycustomer]="customer"></app-customercard>
