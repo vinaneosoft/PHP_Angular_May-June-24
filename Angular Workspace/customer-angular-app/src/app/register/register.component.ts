@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Customer } from '../myclasses/customer';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent {
   registerForm:FormGroup;
-  
+  customer=new Customer();
   constructor(){
     this.registerForm=new FormGroup({
       id:new FormControl(),
@@ -21,6 +22,11 @@ export class RegisterComponent {
     });
   }
   register(){
-    console.log(this.registerForm);
+    //console.log(this.registerForm.value);
+    this.customer=this.registerForm.value;
+    if(this.customer.registerDate==null)
+      this.customer.registerDate=new Date();
+    console.log(this.customer);
+    // angular http : we will save customer in json file at backend
   }
 }
