@@ -25,6 +25,10 @@ export class RegisterComponent {
   get custId(){
     return this.registerForm.get("id");
   }
+  get custName(){
+    return this.registerForm.get("customerName");
+  }
+  // put getters for all form controls
 
 
   register(){

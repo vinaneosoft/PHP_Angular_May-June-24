@@ -5,12 +5,16 @@
             <label for="id" class="form-label">ID:</label>
             <input type="text" class="form-control" id="id" formControlName="id" >
             <div *ngIf="custId?.touched" class="text-danger">
-                <b *ngIf="custId?.hasError('required')">this field is required</b>   
+                <b *ngIf="custId?.hasError('required')">id is required</b>   
             </div>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">NAME:</label>
             <input type="text" class="form-control" id="name" formControlName="customerName">
+            <!-- for every field put error block-->
+            <div *ngIf="custName?.touched" class="text-danger">
+                <b *ngIf="custName?.hasError('required')">name is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="contact" class="form-label">CONTACT:</label>
