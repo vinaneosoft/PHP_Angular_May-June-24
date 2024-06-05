@@ -53,7 +53,18 @@
             <label for="pass" class="form-label">SET PASSWORD:</label>
             <input type="text" class="form-control" id="pass" formControlName="password">
             <div *ngIf="password?.touched" class="text-danger">
-                <b *ngIf="password?.hasError('required')">password is required</b>   
+                <b *ngIf="password?.hasError('required')">password is required</b> 
+                <ul *ngIf="password?.hasError('pattern')">
+                    <li>password must contain atleast one
+                        <ul>
+                            <li>small letter</li>
+                            <li>captial letter</li>
+                            <li>digit</li>
+                            <li>special symbol</li>
+                        </ul>
+                    </li>
+                    <li>password must be 6 to 12 characters long</li>
+               </ul> 
             </div>
         </div>
         <div class="mb-3">

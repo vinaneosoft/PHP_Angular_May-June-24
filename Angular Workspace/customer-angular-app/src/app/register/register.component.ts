@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../myclasses/customer';
+import { CustomValidators } from '../myclasses/custom-validators';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import { Customer } from '../myclasses/customer';
 export class RegisterComponent {
   registerForm:FormGroup;
   customer=new Customer();
+  passwordPattern= new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$")
   constructor(){
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
@@ -18,13 +20,12 @@ export class RegisterComponent {
       customerEmail:new FormControl("", [Validators.required, Validators.email]),
       customerAge:new FormControl("",[Validators.required, Validators.min(10), Validators.max(90)]),
       username:new FormControl("",[Validators.required]),
-      password:new FormControl("", [Validators.required]),
-      cpassword:new FormControl("",[Validators.required]), // to confirm our password
+      password:new FormControl("", [Validators.required, Validators.pattern(this.passwordPattern)]),
+      cpassword:new FormControl("",[Validators.required]), // to confirm our password we need custom validator
       registerDate:new FormControl(""),
-    
-    });
+    }, CustomValidators.compare );
   }
-
+ // we need custom function, custom class to put custom validation function
   get id(){
     return this.registerForm.get("id");
   }
