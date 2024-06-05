@@ -13,8 +13,8 @@ export class RegisterComponent {
   constructor(){
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
-      customerName:new FormControl("", [Validators.required, Validators.pattern("[A-Za-z ]*")]),
-      customerContact:new FormControl("", [Validators.required]),
+      customerName:new FormControl("", [Validators.required, Validators.pattern("[A-Za-z ]{2,}")]),
+      customerContact:new FormControl("", [Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10), Validators.maxLength(10)]),
       customerEmail:new FormControl("", [Validators.required]),
       username:new FormControl("",[Validators.required]),
       password:new FormControl("", [Validators.required]),

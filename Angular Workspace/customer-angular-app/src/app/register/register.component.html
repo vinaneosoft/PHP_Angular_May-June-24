@@ -18,10 +18,12 @@
             </div>
         </div>
         <div class="mb-3">
-            <label for="contact" class="form-label">CONTACT:</label>
-            <input type="number" class="form-control" id="contact" formControlName="customerContact">
+            <label for="contact" class="form-label">MOBILE NUMBER:</label>
+            <input type="text" class="form-control" id="contact" formControlName="customerContact">
             <div *ngIf="customerContact?.touched" class="text-danger">
                 <b *ngIf="customerContact?.hasError('required')">contact is required</b>   
+                <b *ngIf="customerContact?.hasError('pattern')">please enter valid mobile number</b>  
+                <b *ngIf="customerContact?.hasError('minlength') || customerContact?.hasError('maxlength')">please enter 10 digits</b>  
             </div>
         </div>
         <div class="mb-3">
