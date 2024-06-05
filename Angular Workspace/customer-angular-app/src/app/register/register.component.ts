@@ -13,20 +13,40 @@ export class RegisterComponent {
   constructor(){
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
-      customerName:new FormControl("", [Validators.required]),
+      customerName:new FormControl("", [Validators.required, Validators.pattern("[A-Za-z ]*")]),
       customerContact:new FormControl("", [Validators.required]),
       customerEmail:new FormControl("", [Validators.required]),
       username:new FormControl("",[Validators.required]),
       password:new FormControl("", [Validators.required]),
-      registerDate:new FormControl("")
+      cpassword:new FormControl("",[Validators.required]), // to confirm our password
+      registerDate:new FormControl(""),
+    
     });
   }
 
-  get custId(){
+  get id(){
     return this.registerForm.get("id");
   }
-  get custName(){
+  get customerName(){
     return this.registerForm.get("customerName");
+  }
+  get customerContact(){
+    return this.registerForm.get("customerContact");
+  }
+  get customerEmail(){
+    return this.registerForm.get("customerEmail");
+  }
+  get username(){
+    return this.registerForm.get("username");
+  }
+  get password(){
+    return this.registerForm.get("password");
+  }
+  get cpassword(){
+    return this.registerForm.get("cpassword");
+  }
+  get registerDate(){
+    return this.registerForm.get("registerDate");
   }
   // put getters for all form controls
 

@@ -4,37 +4,53 @@
         <div class="mb-3">
             <label for="id" class="form-label">ID:</label>
             <input type="text" class="form-control" id="id" formControlName="id" >
-            <div *ngIf="custId?.touched" class="text-danger">
-                <b *ngIf="custId?.hasError('required')">id is required</b>   
+            <div *ngIf="id?.touched" class="text-danger">
+                <b *ngIf="id?.hasError('required')">id is required</b>   
             </div>
         </div>
         <div class="mb-3">
             <label for="name" class="form-label">NAME:</label>
             <input type="text" class="form-control" id="name" formControlName="customerName">
             <!-- for every field put error block-->
-            <div *ngIf="custName?.touched" class="text-danger">
-                <b *ngIf="custName?.hasError('required')">name is required</b>   
+            <div *ngIf="customerName?.touched" class="text-danger">
+                <b *ngIf="customerName?.hasError('required')">name is required</b>   
+                <b *ngIf="customerName?.hasError('pattern')">please enter valid name</b>   
             </div>
         </div>
         <div class="mb-3">
             <label for="contact" class="form-label">CONTACT:</label>
             <input type="number" class="form-control" id="contact" formControlName="customerContact">
+            <div *ngIf="customerContact?.touched" class="text-danger">
+                <b *ngIf="customerContact?.hasError('required')">contact is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">EMAIL ID:</label>
             <input type="email" class="form-control" id="email" formControlName="customerEmail">
+            <div *ngIf="customerEmail?.touched" class="text-danger">
+                <b *ngIf="customerEmail?.hasError('required')">email is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">SET USERNAME:</label>
             <input type="text" class="form-control" id="username" formControlName="username">
+            <div *ngIf="username?.touched" class="text-danger">
+                <b *ngIf="username?.hasError('required')">username is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="pass" class="form-label">SET PASSWORD:</label>
             <input type="text" class="form-control" id="pass" formControlName="password">
+            <div *ngIf="password?.touched" class="text-danger">
+                <b *ngIf="password?.hasError('required')">password is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="cpass" class="form-label">CONFIRM PASSWORD:</label>
-            <input type="text" class="form-control" id="cpass">
+            <input type="text" class="form-control" id="cpass" formControlName="cpassword">
+            <div *ngIf="cpassword?.touched" class="text-danger">
+                <b *ngIf="cpassword?.hasError('required')">password confirmation is required</b>   
+            </div>
         </div>
         <div class="mb-3">
             <label for="date" class="form-label">Select Register Date:</label>
