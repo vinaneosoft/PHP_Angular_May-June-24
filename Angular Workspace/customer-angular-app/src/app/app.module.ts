@@ -15,6 +15,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { MypipePipe } from './custompipes/mypipe.pipe';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegisterComponent } from './register/register.component';
     PipesComponent,
     OrderbyPipe,
     MypipePipe,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

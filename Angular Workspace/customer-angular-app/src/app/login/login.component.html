@@ -1,0 +1,15 @@
+<section>
+    <h3>LOGIN FORM</h3>
+    <form  (submit)="login(loginForm)" #loginForm="ngForm">
+        <div class="mb-3" >
+            <label for="username" class="form-label">USERNAME:</label>
+            <input type="text" class="form-control" id="username" name="username" required ngModel>
+        </div>
+        <div class="mb-3">
+            <label for="pass" class="form-label">PASSWORD:</label>
+            <input type="text" class="form-control" id="pass" name="password" required ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary">REGISTER</button>
+        <button type="reset" class="btn btn-warning">RESET</button>
+    </form>
+</section>
