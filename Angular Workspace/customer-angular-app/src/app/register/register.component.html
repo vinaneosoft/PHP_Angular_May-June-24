@@ -30,7 +30,16 @@
             <label for="email" class="form-label">EMAIL ID:</label>
             <input type="email" class="form-control" id="email" formControlName="customerEmail">
             <div *ngIf="customerEmail?.touched" class="text-danger">
-                <b *ngIf="customerEmail?.hasError('required')">email is required</b>   
+                <b *ngIf="customerEmail?.hasError('required')">email is required</b> 
+                <b *ngIf="customerEmail?.hasError('email')">please enter valid email id</b>  
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">AGE:</label>
+            <input type="number" class="form-control" id="age" formControlName="customerAge">
+            <div *ngIf="customerAge?.touched" class="text-danger">
+                <b *ngIf="customerAge?.hasError('required')">Age is required</b>   
+                <b *ngIf="customerAge?.hasError('min') || customerAge?.hasError('max')">age between 10-90 is allowed</b>   
             </div>
         </div>
         <div class="mb-3">

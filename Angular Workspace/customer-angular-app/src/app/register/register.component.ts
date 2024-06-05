@@ -15,7 +15,8 @@ export class RegisterComponent {
       id:new FormControl("", [Validators.required]),
       customerName:new FormControl("", [Validators.required, Validators.pattern("[A-Za-z ]{2,}")]),
       customerContact:new FormControl("", [Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10), Validators.maxLength(10)]),
-      customerEmail:new FormControl("", [Validators.required]),
+      customerEmail:new FormControl("", [Validators.required, Validators.email]),
+      customerAge:new FormControl("",[Validators.required, Validators.min(10), Validators.max(90)]),
       username:new FormControl("",[Validators.required]),
       password:new FormControl("", [Validators.required]),
       cpassword:new FormControl("",[Validators.required]), // to confirm our password
@@ -48,7 +49,9 @@ export class RegisterComponent {
   get registerDate(){
     return this.registerForm.get("registerDate");
   }
-  // put getters for all form controls
+  get customerAge(){
+    return this.registerForm.get("customerAge");
+  } 
 
 
   register(){
