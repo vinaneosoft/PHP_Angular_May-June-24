@@ -16,6 +16,7 @@ import { OrderbyPipe } from './custompipes/orderby.pipe';
 import { MypipePipe } from './custompipes/mypipe.pipe';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LoginComponent } from './login/login.component';
     OrderbyPipe,
     MypipePipe,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
