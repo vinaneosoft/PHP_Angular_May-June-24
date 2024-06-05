@@ -1,3 +1,22 @@
 dimension{
     width: 500px;
 }
+
+input.ng-untouched{
+    background: lightblue;
+}
+input.ng-touched{
+    background: lightpink;
+}
+input.ng-pristine{
+    background: lightgray;
+}
+input.ng-dirty{
+    background: lightcyan;
+}
+input.ng-invalid{
+    border: 2px solid red;
+}
+input.ng-valid{
+    border: 2px solid green;
+}
