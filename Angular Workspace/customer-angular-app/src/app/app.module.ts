@@ -17,6 +17,9 @@ import { MypipePipe } from './custompipes/mypipe.pipe';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
+import { VegFoodsComponent } from './veg-foods/veg-foods.component';
+import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { HomeComponent } from './home/home.component';
     MypipePipe,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ViewNotFoundComponent,
+    VegFoodsComponent,
+    NonvegFoodsComponent
   ],
   imports: [
     BrowserModule,

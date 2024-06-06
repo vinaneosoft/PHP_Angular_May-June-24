@@ -29,6 +29,7 @@ export class RegisterComponent {
 
     const customerId=router.snapshot.paramMap.get("cid");
     console.log(customerId);
+    console.log(router.routeConfig?.path);
     //further logic of searhcing customer at backend using id we wil do in angular http
     
   }
