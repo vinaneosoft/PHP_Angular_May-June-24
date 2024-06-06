@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
 
-  serviceCounter=0;
+   serviceCounter=0;
   constructor() { }
 
   incrementCounter():void{
