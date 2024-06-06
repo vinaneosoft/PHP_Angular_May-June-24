@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../myclasses/customer';
 import { CustomValidators } from '../myclasses/custom-validators';
+import { ActivatedRoute } from '@angular/router'; // built in service
 
 @Component({
   selector: 'app-register',
@@ -12,7 +13,8 @@ export class RegisterComponent {
   registerForm:FormGroup;
   customer=new Customer();
   passwordPattern= new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$")
-  constructor(){
+  constructor(private router:ActivatedRoute) // DI in Angular
+  {
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
       customerName:new FormControl("", [Validators.required, Validators.pattern("[A-Za-z ]{2,}")]),
@@ -24,6 +26,11 @@ export class RegisterComponent {
       cpassword:new FormControl("",[Validators.required]), // to confirm our password we need custom validator
       registerDate:new FormControl(""),
     }, CustomValidators.compare );
+
+    const customerId=router.snapshot.paramMap.get("cid");
+    console.log(customerId);
+    //further logic of searhcing customer at backend using id we wil do in angular http
+    
   }
  // we need custom function, custom class to put custom validation function
   get id(){

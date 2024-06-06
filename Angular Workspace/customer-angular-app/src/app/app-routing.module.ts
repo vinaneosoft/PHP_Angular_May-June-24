@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path:'customers',
     component:CustomersComponent
+  },
+  {
+    path:'update/:cid', // path , cid : user defined variable to hold route parameter
+    component:RegisterComponent // reuse component to update the details
   }
 ];
 

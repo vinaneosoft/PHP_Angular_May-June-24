@@ -14,7 +14,7 @@
       <li class="list-group-item">{{mycustomer.password}}</li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">EDIT</a>
+      <a href="#" class="card-link" [routerLink]="['/update',mycustomer.id ]">EDIT</a>
       <a href="#" class="card-link">DELETE</a>
     </div>
   </div>
