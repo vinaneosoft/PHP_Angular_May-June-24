@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { VegFoodsComponent } from './veg-foods/veg-foods.component';
 import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
+import { CounterService } from './myservices/counter.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
     BrowserModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CounterService], // do not put name of built in service
   bootstrap: [AppComponent]
 })
 export class AppModule { }

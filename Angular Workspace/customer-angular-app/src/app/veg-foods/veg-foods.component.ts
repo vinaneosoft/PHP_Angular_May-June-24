@@ -11,4 +11,8 @@ export class VegFoodsComponent {
   constructor(private counterService:CounterService){
     //console.log(counterService.getCounter()); // call to service method
   }
+  increment(){
+    this.counterService.incrementCounter();
+    this.counter2=this.counterService.getCounter();
+  }
 }

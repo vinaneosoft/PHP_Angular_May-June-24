@@ -3,6 +3,7 @@
         <span>Not registered yet? Register from  <a routerLink="/register">here </a></span>
     </p>
     <h3>LOGIN FORM</h3>
+    <b>{{errorMessage}}</b>
     <form  (submit)="login(loginForm)" #loginForm="ngForm">
         <div class="mb-3" >
             <label for="username" class="form-label">USERNAME:</label>
