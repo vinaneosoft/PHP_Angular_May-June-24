@@ -8,6 +8,7 @@ import { ViewNotFoundComponent } from './view-not-found/view-not-found.component
 import { VegFoodsComponent } from './veg-foods/veg-foods.component';
 import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
 import { AuthGuardService } from './myservices/auth-guard.service';
+import { authGuardGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch: 'full'},
@@ -33,7 +34,8 @@ const routes: Routes = [
   {
     path:'customers',
     component:CustomersComponent,
-    canActivate:mapToCanActivate([AuthGuardService])
+   // canActivate:mapToCanActivate([AuthGuardService]),
+    canActivate:[authGuardGuard] // Angular 17 guard functions
   },
   {
     path:'update/:cid', // path , cid : user defined variable to hold route parameter
