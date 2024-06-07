@@ -14,4 +14,7 @@ export class CustomerCrudService {
   addCustomer(customer:Customer){
      return this.http.post("http://localhost:3000/customers",customer); // secure, data in  body
   }
+  deleteCustomerById(id:string){
+    return this.http.delete("http://localhost:3000/customers/"+id)
+  }
 }

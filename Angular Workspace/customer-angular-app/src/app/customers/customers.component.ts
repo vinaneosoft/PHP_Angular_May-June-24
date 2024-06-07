@@ -22,8 +22,13 @@ export class CustomersComponent {
 
   }
 
-  
-  delete(){
-    
+  delete(id:string){
+    const confirmed=window.confirm("Do you really want to delete?");
+    if(confirmed){
+      this.crud.deleteCustomerById(id).subscribe({
+        next:(data)=> { alert("data deleted successfully"); this.getCustomers()},
+        error:(error)=>console.log(error)
+      })
+    }
   }
 }
