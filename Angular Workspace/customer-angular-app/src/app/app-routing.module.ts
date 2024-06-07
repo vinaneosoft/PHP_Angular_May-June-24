@@ -35,7 +35,7 @@ const routes: Routes = [
     path:'customers',
     component:CustomersComponent,
    // canActivate:mapToCanActivate([AuthGuardService]),
-    canActivate:[authGuardGuard] // Angular 17 guard functions
+    //canActivate:[authGuardGuard] // Angular 17 guard functions
   },
   {
     path:'update/:cid', // path , cid : user defined variable to hold route parameter
