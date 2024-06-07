@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../myclasses/customer';
 import { CustomValidators } from '../myclasses/custom-validators';
 import { ActivatedRoute } from '@angular/router'; // built in service
+import { CustomerCrudService } from '../myservices/customer-crud.service';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,7 @@ export class RegisterComponent {
   registerForm:FormGroup;
   customer=new Customer();
   passwordPattern= new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$")
-  constructor(private router:ActivatedRoute) // DI in Angular
+  constructor(private router:ActivatedRoute, private crud : CustomerCrudService) // DI in Angular
   {
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
@@ -64,12 +65,16 @@ export class RegisterComponent {
 
 
   register(){
-    console.log(this.registerForm);
+   // console.log(this.registerForm);
     this.customer=this.registerForm.value;
     if(this.customer.registerDate==null)
       this.customer.registerDate=new Date();
-    console.log(this.customer);
+    //console.log(this.customer);
     // angular http : we will save customer in json file at backend
+    this.crud.addCustomer(this.customer).subscribe({
+      next:(data)=>alert(data),
+      error:(error)=>console.log(error)
+    });
   }
 
 
