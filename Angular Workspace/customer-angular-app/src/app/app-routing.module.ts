@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -7,6 +7,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { ViewNotFoundComponent } from './view-not-found/view-not-found.component';
 import { VegFoodsComponent } from './veg-foods/veg-foods.component';
 import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
+import { AuthGuardService } from './myservices/auth-guard.service';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch: 'full'},
@@ -31,7 +32,8 @@ const routes: Routes = [
   },
   {
     path:'customers',
-    component:CustomersComponent
+    component:CustomersComponent,
+    canActivate:mapToCanActivate([AuthGuardService])
   },
   {
     path:'update/:cid', // path , cid : user defined variable to hold route parameter

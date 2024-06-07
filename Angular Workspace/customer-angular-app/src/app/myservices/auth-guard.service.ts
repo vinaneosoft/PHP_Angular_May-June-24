@@ -9,6 +9,8 @@ export class AuthGuardService{
   constructor(private loginService:LoginService) { }
   canActivate(): boolean {
     // user has logged in or not 
+    if(this.loginService.loginFlag==false)
+      alert("Please login first...")
     return this.loginService.loginFlag
   } 
 }
