@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { LoginService } from '../myservices/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,7 @@ export class NavbarComponent {
   // put @Ouput on this variable
   @Output()
   emitter=new EventEmitter<string>();
-  constructor(public loginService:LoginService){
+  constructor(public loginService:LoginService, private cookie:CookieService){
     //console.log("in constructor");
     // do not emit events in constructor
   }
@@ -25,6 +26,10 @@ export class NavbarComponent {
     this.emitter.emit(this.brandName);
   }
 
+  logout(){
+    this.cookie.delete('username');
+    this.loginService.loginFlag=false;
+  }
   //in logout function, delete cookie and make login flag false
  
 }
