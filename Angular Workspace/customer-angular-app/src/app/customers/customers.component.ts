@@ -23,10 +23,10 @@ export class CustomersComponent {
   }
 
   delete(id:string){
-    const confirmed=window.confirm("Do you really want to delete?");
+    const confirmed=confirm("Do you really want to delete?");
     if(confirmed){
       this.crud.deleteCustomerById(id).subscribe({
-        next:(data)=> { alert("data deleted successfully"); this.getCustomers()},
+        next:(data)=> { alert("customer deleted successfully"); this.getCustomers()},
         error:(error)=>console.log(error)
       })
     }
