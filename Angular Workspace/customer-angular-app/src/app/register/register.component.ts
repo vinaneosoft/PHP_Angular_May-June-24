@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Customer } from '../myclasses/customer';
 import { CustomValidators } from '../myclasses/custom-validators';
-import { ActivatedRoute } from '@angular/router'; // built in service
+import { ActivatedRoute, Router } from '@angular/router'; // built in service
 import { CustomerCrudService } from '../myservices/customer-crud.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class RegisterComponent {
   registerForm:FormGroup;
   customer=new Customer();
   passwordPattern= new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$")
-  constructor(private router:ActivatedRoute, private crud : CustomerCrudService) // DI in Angular
+  constructor(private router:ActivatedRoute, private crud : CustomerCrudService, private router2:Router) // DI in Angular
   {
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
@@ -66,13 +66,16 @@ export class RegisterComponent {
 
   register(){
    // console.log(this.registerForm);
+    this.registerForm.removeControl("cpassword");
     this.customer=this.registerForm.value;
-    if(this.customer.registerDate==null)
-      this.customer.registerDate=new Date();
-    //console.log(this.customer);
-    // angular http : we will save customer in json file at backend
+    this.customer.customerImage="Resources/sampleimage.webp"
+    if(this.customer.registerDate=="")
+      this.customer.registerDate=new Date().toString();
     this.crud.addCustomer(this.customer).subscribe({
-      next:(data)=>alert(data),
+      next:(data)=>{
+        alert("Customer registered successfully....");
+        this.router2.navigate(["/customers"]);
+      },
       error:(error)=>console.log(error)
     });
   }

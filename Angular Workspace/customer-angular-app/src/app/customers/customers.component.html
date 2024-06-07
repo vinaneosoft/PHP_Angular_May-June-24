@@ -11,7 +11,11 @@
 
 </div>
 <section class="d-flex flex-wrap">
-    <div *ngFor="let customer of customers | orderby :property">
+    <div class="card" [ngStyle]="{width: '18rem'}" *ngFor="let customer of customers | orderby :property">
         <app-customercard [mycustomer]="customer"></app-customercard>
+        <div class="card-body">
+            <a href="#" class="card-link" [routerLink]="['/update',customer.id ]">EDIT</a>
+            <a href="#" class="card-link">DELETE</a>
+        </div>
     </div>
 </section>

@@ -1,5 +1,4 @@
 
-<div class="card" [ngStyle]="{width: '18rem'}">
     <h5>#{{mycustomer.id}}</h5>
     <img [src]="mycustomer.customerImage" title="image" class="card-img-top" [alt]="mycustomer.customerName">
     <div class="card-body">
@@ -13,8 +12,4 @@
       <li class="list-group-item">{{mycustomer.username}}</li>
       <!-- <li class="list-group-item">{{mycustomer.password}}</li> -->
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link" [routerLink]="['/update',mycustomer.id ]">EDIT</a>
-      <a href="#" class="card-link">DELETE</a>
-    </div>
-  </div>
+   
