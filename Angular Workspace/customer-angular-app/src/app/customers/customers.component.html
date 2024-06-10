@@ -15,7 +15,7 @@
         <app-customercard [mycustomer]="customer"></app-customercard>
         <div class="card-body">
             <a href="#" class="card-link" [routerLink]="['/update',customer.id ]">EDIT</a>
-            <button type="button" class="card-link" (click)="delete(customer.id)">DELETE</button>
+            <button type="button" class="btn btn-link card-link" (click)="delete(customer.id)">DELETE</button>
         </div>
     </div>
 </section>

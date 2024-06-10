@@ -11,6 +11,9 @@ export class CustomerCrudService {
    getAllCustomers(){
     return this.http.get("http://localhost:3000/customers"); // Observable object
   }
+  getCustomerById(id:string){
+    return this.http.get("http://localhost:3000/customers/"+id);
+  }
   addCustomer(customer:Customer){
      return this.http.post("http://localhost:3000/customers",customer); // secure, data in  body
   }

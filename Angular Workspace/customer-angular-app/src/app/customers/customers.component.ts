@@ -17,7 +17,7 @@ export class CustomersComponent {
    getCustomers(){
     this.crud.getAllCustomers().subscribe({
       next:(data)=> this.customers=data as Customer[],
-      error:(error)=>console.log(error)
+      error:(error)=>alert("Something went wrong while getting.....")
     })
 
   }
@@ -27,7 +27,7 @@ export class CustomersComponent {
     if(confirmed){
       this.crud.deleteCustomerById(id).subscribe({
         next:(data)=> { alert("customer deleted successfully"); this.getCustomers()},
-        error:(error)=>console.log(error)
+        error:(error)=>alert("Something went wrong while deleting.....")
       })
     }
   }

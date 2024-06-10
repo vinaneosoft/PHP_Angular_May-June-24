@@ -31,10 +31,19 @@ export class RegisterComponent {
     const customerId=router.snapshot.paramMap.get("cid");
     console.log(customerId);
     console.log(router.routeConfig?.path);
-    //further logic of searhcing customer at backend using id we wil do in angular http
+    if(customerId!=null)
+      this.searchCustomer(customerId);
     
   }
  // we need custom function, custom class to put custom validation function
+
+  searchCustomer(id:string){
+    this.crud.getCustomerById(id).subscribe({
+      next:(data)=>console.log(data),
+      error:(error)=>alert("something went wrong while searching")
+    })
+  }
+
   get id(){
     return this.registerForm.get("id");
   }
@@ -67,19 +76,17 @@ export class RegisterComponent {
   register(){
    // console.log(this.registerForm);
     this.registerForm.removeControl("cpassword");
-    this.customer=this.registerForm.value;
+    this.customer=this.registerForm.value; 
     this.customer.customerImage="Resources/sampleimage.webp"
     if(this.customer.registerDate=="")
       this.customer.registerDate=new Date().toString();
     this.crud.addCustomer(this.customer).subscribe({
       next:(data)=>{
+        console.log(data, " added");
         alert("Customer registered successfully....");
         this.router2.navigate(["/customers"]);
       },
-      error:(error)=>console.log(error)
+      error:(error)=>alert("something went wrong while adding....")
     });
   }
-
-
-
 }
