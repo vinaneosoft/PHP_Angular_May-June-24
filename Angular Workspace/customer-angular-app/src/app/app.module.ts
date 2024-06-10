@@ -28,6 +28,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import {MatDividerModule} from '@angular/material/divider';
     NonvegFoodsComponent
   ],
   imports: [
-    BrowserModule, MatButtonModule, MatIconModule, MatDividerModule,
+    BrowserModule, MatButtonModule, MatIconModule, MatDividerModule,MatTooltipModule,
     AppRoutingModule, FormsModule, ReactiveFormsModule, MatSlideToggleModule
   ],
   providers: [CounterService, provideHttpClient(), provideAnimationsAsync()], // do not put name of built in service
