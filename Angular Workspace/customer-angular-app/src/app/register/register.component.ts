@@ -96,10 +96,10 @@ getSystemDate(){
   }
 
   collectData(){
-    const path=this.registerForm.value.customerImage;
+    const path=this.registerForm.value.customerImage; // fake path
     const imageName=path.slice(path.lastIndexOf("\\")+1);
     this.customer=this.registerForm.value; 
-    this.customer.customerImage="Resources/"+imageName;
+    this.customer.customerImage="Resources/"+imageName; // real path
 
     if(this.label=="UPDATE")
       this.updateCust();

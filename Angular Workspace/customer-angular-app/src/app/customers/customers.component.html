@@ -12,7 +12,7 @@
 
 </div>
 <section class="d-flex flex-wrap">
-    <div class="card" [ngStyle]="{width: '18rem'}" *ngFor="let customer of customers | orderby :property">
+    <div class="card m-4" [ngStyle]="{width: '18rem'}" *ngFor="let customer of customers | orderby :property">
         <app-customercard [mycustomer]="customer"></app-customercard>
         <mat-divider></mat-divider>
         <div class="card-body d-flex justify-content-between">
