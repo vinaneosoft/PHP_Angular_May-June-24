@@ -22,7 +22,12 @@ import { VegFoodsComponent } from './veg-foods/veg-foods.component';
 import { NonvegFoodsComponent } from './nonveg-foods/nonveg-foods.component';
 import { CounterService } from './myservices/counter.service';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,10 +49,10 @@ import { provideHttpClient } from '@angular/common/http';
     NonvegFoodsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule
+    BrowserModule, MatButtonModule, MatIconModule, MatDividerModule,
+    AppRoutingModule, FormsModule, ReactiveFormsModule, MatSlideToggleModule
   ],
-  providers: [CounterService, provideHttpClient()], // do not put name of built in service
+  providers: [CounterService, provideHttpClient(), provideAnimationsAsync()], // do not put name of built in service
   bootstrap: [AppComponent]
 })
 export class AppModule { }
