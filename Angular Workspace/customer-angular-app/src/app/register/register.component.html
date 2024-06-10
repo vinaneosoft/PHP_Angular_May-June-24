@@ -47,7 +47,7 @@
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">SET USERNAME:</label>
-            <input type="text" class="form-control" id="username" formControlName="username">
+            <input type="text" class="form-control" id="username" formControlName="username" [readonly]="router.routeConfig?.path?.includes('update')" >
             <div *ngIf="username?.touched" class="text-danger">
                 <b *ngIf="username?.hasError('required')">username is required</b>   
             </div>
@@ -70,7 +70,7 @@
                </ul> 
             </div>
         </div>
-        <div class="mb-3" *ngIf="!router.routeConfig?.path?.includes('update')">
+        <div class="mb-3">
             <label for="cpass" class="form-label">CONFIRM PASSWORD:</label>
             <input type="text" class="form-control" id="cpass" formControlName="cpassword">
             <div *ngIf="cpassword?.touched" class="text-danger">

@@ -11,6 +11,7 @@ import { CustomerCrudService } from '../myservices/customer-crud.service';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+   
   label="REGISTER";
   registerForm:FormGroup;
   customer=new Customer();
@@ -37,17 +38,25 @@ export class RegisterComponent {
     
   }
  // we need custom function, custom class to put custom validation function
-
+getSystemDate(){
+  const local = new Date();
+    local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+    return local.toJSON().slice(0,10);
+}
   searchCustomer(id:string){
     this.crud.getCustomerById(id).subscribe({
       next:(data)=>{
         this.customer= data as Customer;
-        const mycustomer={...this.customer, cpassword:this.customer.password}
+      //  const mycustomer={...this.customer, cpassword:this.customer.password}
+       // console.log(mycustomer);
+        
        try {
-        this.registerForm.setValue(mycustomer);
+        this.registerForm.setValue(this.customer);
        } catch (error) {
           console.log("Image not set in control");
        }
+       console.log(this.registerForm);
+       
        this.label="UPDATE";
       },
       error:(error)=>alert("something went wrong while searching")
@@ -84,11 +93,11 @@ export class RegisterComponent {
 
 
   collectData(){
-   // console.log(this.registerForm);
-    this.registerForm.removeControl("cpassword");
-    this.customer=this.registerForm.value; 
+    const mycustomer=this.registerForm.value; 
+    delete mycustomer.cpassword;
+    this.customer=mycustomer;
     this.customer.customerImage="Resources/sampleimage.webp"
-    console.log(this.customer);
+
     if(this.label=="UPDATE")
       this.updateCust();
     else
