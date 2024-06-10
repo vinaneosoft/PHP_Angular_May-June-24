@@ -2,11 +2,11 @@
     <p>
         <span>Already Registered? login from <a routerLink="/login">here </a></span>
     </p>
-    <h3>Customer Register Form</h3>
+    <h3>CUSTOMER {{label}} FORM</h3>
     <form [formGroup]="registerForm" (submit)="register()">
         <div class="mb-3">
             <label for="id" class="form-label">ID:</label>
-            <input type="text" class="form-control" id="id" formControlName="id" >
+            <input type="text" class="form-control" id="id" formControlName="id" [readonly]="router.routeConfig?.path?.includes('update')" >
             <div *ngIf="id?.touched" class="text-danger">
                 <b *ngIf="id?.hasError('required')">id is required</b>   
             </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="mb-3">
             <label for="pass" class="form-label">SET PASSWORD:</label>
-            <input type="text" class="form-control" id="pass" formControlName="password">
+            <input type="text" class="form-control" id="pass" formControlName="password" [readonly]="router.routeConfig?.path?.includes('update')">
             <div *ngIf="password?.touched" class="text-danger">
                 <b *ngIf="password?.hasError('required')">password is required</b> 
                 <ul *ngIf="password?.hasError('pattern')">
@@ -70,7 +70,7 @@
                </ul> 
             </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3" *ngIf="!router.routeConfig?.path?.includes('update')">
             <label for="cpass" class="form-label">CONFIRM PASSWORD:</label>
             <input type="text" class="form-control" id="cpass" formControlName="cpassword">
             <div *ngIf="cpassword?.touched" class="text-danger">
@@ -82,7 +82,7 @@
             <label for="date" class="form-label">Select Register Date:</label>
             <input type="datetime-local" class="form-control" id="date" formControlName="registerDate">
         </div>
-        <button type="submit" class="btn btn-primary">REGISTER</button>
+        <button type="submit" class="btn btn-primary"> {{label}}</button>
         <button type="reset" class="btn btn-warning">RESET</button>
     </form>
 </div>

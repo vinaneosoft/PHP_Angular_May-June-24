@@ -11,10 +11,11 @@ import { CustomerCrudService } from '../myservices/customer-crud.service';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  label="REGISTER";
   registerForm:FormGroup;
   customer=new Customer();
   passwordPattern= new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,12}$")
-  constructor(private router:ActivatedRoute, private crud : CustomerCrudService, private router2:Router) // DI in Angular
+  constructor(public router:ActivatedRoute, private crud : CustomerCrudService, public router2:Router) // DI in Angular
   {
     this.registerForm=new FormGroup({
       id:new FormControl("", [Validators.required]),
@@ -39,7 +40,17 @@ export class RegisterComponent {
 
   searchCustomer(id:string){
     this.crud.getCustomerById(id).subscribe({
-      next:(data)=>console.log(data),
+      next:(data)=>{
+        this.customer= data as Customer;
+        const mycustomer={...this.customer, cpassword:this.customer.password}
+       try {
+        this.registerForm.setValue(mycustomer);
+       } catch (error) {
+          console.log("Image not set in control");
+          
+       }
+       this.label="UPDATE";
+      },
       error:(error)=>alert("something went wrong while searching")
     })
   }
@@ -89,4 +100,14 @@ export class RegisterComponent {
       error:(error)=>alert("something went wrong while adding....")
     });
   }
+
+  addCustomer(){
+    // new customer object
+  }
+
+  updateCustomer(){
+   
+   
+  }
+
 }
