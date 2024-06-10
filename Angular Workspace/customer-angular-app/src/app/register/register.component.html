@@ -3,7 +3,7 @@
         <span>Already Registered? login from <a routerLink="/login">here </a></span>
     </p>
     <h3>CUSTOMER {{label}} FORM</h3>
-    <form [formGroup]="registerForm" (submit)="register()">
+    <form [formGroup]="registerForm" (submit)="collectData()">
         <div class="mb-3">
             <label for="id" class="form-label">ID:</label>
             <input type="text" class="form-control" id="id" formControlName="id" [readonly]="router.routeConfig?.path?.includes('update')" >

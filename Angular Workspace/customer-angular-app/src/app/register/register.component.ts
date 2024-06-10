@@ -47,7 +47,6 @@ export class RegisterComponent {
         this.registerForm.setValue(mycustomer);
        } catch (error) {
           console.log("Image not set in control");
-          
        }
        this.label="UPDATE";
       },
@@ -84,11 +83,19 @@ export class RegisterComponent {
   } 
 
 
-  register(){
+  collectData(){
    // console.log(this.registerForm);
     this.registerForm.removeControl("cpassword");
     this.customer=this.registerForm.value; 
     this.customer.customerImage="Resources/sampleimage.webp"
+    console.log(this.customer);
+    if(this.label=="UPDATE")
+      this.updateCust();
+    else
+      this.addCustomer();
+  }
+
+  addCustomer(){
     if(this.customer.registerDate=="")
       this.customer.registerDate=new Date().toString();
     this.crud.addCustomer(this.customer).subscribe({
@@ -101,13 +108,15 @@ export class RegisterComponent {
     });
   }
 
-  addCustomer(){
-    // new customer object
-  }
-
-  updateCustomer(){
-   
-   
-  }
+  updateCust(){
+      this.crud.updateCustomer(this.customer).subscribe({
+        next:(data)=>{
+          console.log(data, " updated");
+          alert("Customer updated successfully....");
+          this.router2.navigate(["/customers"]);
+        },
+        error:(error)=>alert("something went wrong while updating....")
+      });  
+    }
 
 }

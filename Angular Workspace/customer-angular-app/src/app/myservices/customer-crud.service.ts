@@ -20,4 +20,7 @@ export class CustomerCrudService {
   deleteCustomerById(id:string){
     return this.http.delete("http://localhost:3000/customers/"+id)
   }
+  updateCustomer(customer:Customer){
+    return this.http.put("http://localhost:3000/customers/"+customer.id,customer); // secure, data in  body
+ }
 }
