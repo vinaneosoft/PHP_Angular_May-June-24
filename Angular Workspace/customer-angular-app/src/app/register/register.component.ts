@@ -27,7 +27,7 @@ export class RegisterComponent {
       username:new FormControl("",[Validators.required]),
       password:new FormControl("", [Validators.required, Validators.pattern(this.passwordPattern)]),
       cpassword:new FormControl("",[Validators.required]), // to confirm our password we need custom validator
-      registerDate:new FormControl(""),
+      registerDate:new FormControl(this.getSystemDate(), [Validators.required]),
     }, CustomValidators.compare );
 
     const customerId=router.snapshot.paramMap.get("cid");
@@ -39,9 +39,9 @@ export class RegisterComponent {
   }
  // we need custom function, custom class to put custom validation function
 getSystemDate(){
-  const local = new Date();
-    local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
-    return local.toJSON().slice(0,10);
+  var now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  return now.toISOString().slice(0,16);
 }
   searchCustomer(id:string){
     this.crud.getCustomerById(id).subscribe({
@@ -105,8 +105,6 @@ getSystemDate(){
   }
 
   addCustomer(){
-    if(this.customer.registerDate=="")
-      this.customer.registerDate=new Date().toString();
     this.crud.addCustomer(this.customer).subscribe({
       next:(data)=>{
         console.log(data, " added");
