@@ -29,6 +29,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   ],
   imports: [
     BrowserModule, MatButtonModule, MatIconModule, MatDividerModule,MatTooltipModule,
-    AppRoutingModule, FormsModule, ReactiveFormsModule, MatSlideToggleModule
+    AppRoutingModule, FormsModule, ReactiveFormsModule, MatSlideToggleModule, MatSelectModule
   ],
   providers: [CounterService, provideHttpClient(), provideAnimationsAsync()], // do not put name of built in service
   bootstrap: [AppComponent]

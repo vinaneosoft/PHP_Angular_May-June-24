@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { LoginService } from '../myservices/login.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -31,5 +31,7 @@ export class NavbarComponent {
     this.loginService.loginFlag=false;
   }
   //in logout function, delete cookie and make login flag false
- 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes); // it detects the changes in value which in shared from parent
+   }
 }

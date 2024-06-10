@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   // value in brand will come from child side
   brand:string=""
-
 }

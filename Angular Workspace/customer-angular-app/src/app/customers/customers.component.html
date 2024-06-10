@@ -1,13 +1,14 @@
 <div>
-    <label for="sortChoice">Sort By: </label>
-    <select id="sortChoice" [(ngModel)]="property">
-        <option value="id">ID</option>
-        <option value="customerName">NAME</option>
-        <option value="registerDate">REGISTER DATE</option>
-        <option value="customerContact">CONTACT</option>
-        <option value="customerEmail">EMAIL</option>
-        <option value="username">USERNAME</option>
-    </select>
+   
+    <mat-label>Sort By : </mat-label>
+    <mat-select color="primary" id="sortChoice" [(ngModel)]="property" class="w-25">
+        <mat-option value="id">ID</mat-option>
+        <mat-option value="customerName">NAME</mat-option>
+        <mat-option value="registerDate">REGISTER DATE</mat-option>
+        <mat-option value="customerContact">CONTACT</mat-option>
+        <mat-option value="customerEmail">EMAIL</mat-option>
+        <mat-option value="username">USERNAME</mat-option>
+    </mat-select>
 
 </div>
 <section class="d-flex flex-wrap">
