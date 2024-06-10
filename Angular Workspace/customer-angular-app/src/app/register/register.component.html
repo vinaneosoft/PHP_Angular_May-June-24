@@ -72,7 +72,7 @@
         </div>
         <div class="mb-3">
             <label for="cpass" class="form-label">CONFIRM PASSWORD:</label>
-            <input type="text" class="form-control" id="cpass" formControlName="cpassword">
+            <input type="text" class="form-control" id="cpass" formControlName="cpassword"  [readonly]="router.routeConfig?.path?.includes('update')">
             <div *ngIf="cpassword?.touched" class="text-danger">
                 <b *ngIf="cpassword?.hasError('required')">password confirmation is required</b>  
                 <b *ngIf="registerForm?.hasError('compare')">both password must match</b>   

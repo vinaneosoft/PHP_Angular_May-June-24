@@ -45,15 +45,15 @@ getSystemDate(){
 }
   searchCustomer(id:string){
     this.crud.getCustomerById(id).subscribe({
-      next:(data)=>{
+      next:(data)=>{  
         this.customer= data as Customer;
-      //  const mycustomer={...this.customer, cpassword:this.customer.password}
+       // const mycustomer={...this.customer,cpassword:this.customer.password}
        // console.log(mycustomer);
-        
        try {
         this.registerForm.setValue(this.customer);
+      //  this.registerForm.get("cpassword")?.setValue(this.customer.password);
        } catch (error) {
-          console.log("Image not set in control");
+          console.log(error);
        }
        console.log(this.registerForm);
        
@@ -93,9 +93,9 @@ getSystemDate(){
 
 
   collectData(){
-    const mycustomer=this.registerForm.value; 
-    delete mycustomer.cpassword;
-    this.customer=mycustomer;
+    this.customer=this.registerForm.value; 
+   // delete mycustomer.cpassword;
+  //  this.customer=mycustomer;
     this.customer.customerImage="Resources/sampleimage.webp"
 
     if(this.label=="UPDATE")
