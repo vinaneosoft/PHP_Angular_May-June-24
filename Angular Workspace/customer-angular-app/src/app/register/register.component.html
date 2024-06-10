@@ -3,7 +3,7 @@
         <span>Already Registered? login from <a routerLink="/login">here </a></span>
     </p>
     <h3>CUSTOMER {{label}} FORM</h3>
-    <form [formGroup]="registerForm" (submit)="collectData()">
+    <form [formGroup]="registerForm" (submit)="collectData()" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="id" class="form-label">ID:</label>
             <input type="text" class="form-control" id="id" formControlName="id" [readonly]="router.routeConfig?.path?.includes('update')" >
@@ -79,9 +79,17 @@
             </div>
         </div>
         <div class="mb-3">
+            <label for="profile" class="form-label">Upload Image</label>
+            <input type="file" class="form-control" id="profile" formControlName ="customerImage">
+        </div>
+        <div class="mb-3">
             <label for="date" class="form-label">Select Register Date:</label>
             <input type="datetime-local" class="form-control" id="date" formControlName="registerDate">
+            <div *ngIf="registerDate?.touched" class="text-danger">
+                <b *ngIf="registerDate?.hasError('required')">Date is required</b>  
+            </div>
         </div>
+
         <button type="submit" mat-flat-button color="primary"> {{label}}</button>
         <button type="reset" mat-flat-button color="warn">RESET</button>
     </form>

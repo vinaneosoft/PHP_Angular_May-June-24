@@ -16,6 +16,6 @@ export class CustomercardComponent implements OnChanges {
       console.log("in card destroy");
     }
     ngOnChanges(changes: SimpleChanges): void {
-     console.log(changes); // it detects the changes in value which in shared from parent
+   //  console.log(changes); // it detects the changes in value which in shared from parent
     }
 }

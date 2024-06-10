@@ -28,6 +28,7 @@ export class RegisterComponent {
       password:new FormControl("", [Validators.required, Validators.pattern(this.passwordPattern)]),
       cpassword:new FormControl("",[Validators.required]), // to confirm our password we need custom validator
       registerDate:new FormControl(this.getSystemDate(), [Validators.required]),
+      customerImage:new FormControl("")
     }, CustomValidators.compare );
 
     const customerId=router.snapshot.paramMap.get("cid");
@@ -90,13 +91,15 @@ getSystemDate(){
   get customerAge(){
     return this.registerForm.get("customerAge");
   } 
-
+  get customerImage(){
+    return this.registerForm.get("customerImage");
+  }
 
   collectData(){
+    const path=this.registerForm.value.customerImage;
+    const imageName=path.slice(path.lastIndexOf("\\")+1);
     this.customer=this.registerForm.value; 
-   // delete mycustomer.cpassword;
-  //  this.customer=mycustomer;
-    this.customer.customerImage="Resources/sampleimage.webp"
+    this.customer.customerImage="Resources/"+imageName;
 
     if(this.label=="UPDATE")
       this.updateCust();

@@ -33,14 +33,14 @@ export class CustomersComponent implements OnDestroy, OnInit {
     }
   }
   ngOnInit(){
-    console.log("first life cycle method");
-    console.log("called when components created");
-    console.log("u can do initial settings in component using this method...");
+ //   console.log("first life cycle method");
+  //  console.log("called when components created");
+  //  console.log("u can do initial settings in component using this method...");
     
   }
   ngOnDestroy(): void {
-    console.log("last life cycle method");
-    console.log("called just b4 the component gets deleted");
-    console.log("u can do some final things b4 component gets removed....");
+  //  console.log("last life cycle method");
+  //  console.log("called just b4 the component gets deleted");
+//console.log("u can do some final things b4 component gets removed....");
   }
 }
